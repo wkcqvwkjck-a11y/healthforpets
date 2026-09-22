@@ -1,5 +1,9 @@
 # Site web Health for Pets
 
+**Statut (22/09/2026)** : ✅ **en ligne sur `http://healthforpets.fr`** (8 pages FR/EN + assets en HTTP 200)
+· ⏳ HTTPS en cours d'émission par GitHub (certificat Let's Encrypt) → cocher **Enforce HTTPS** dès qu'il est disponible
+· ✅ DNS OVH vérifiés (4 A + 4 AAAA + CNAME `www`, **MX/SPF conservés** pour l'e-mail)
+
 Site statique (HTML/CSS, aucune dépendance) destiné à **GitHub Pages** avec un **nom de
 domaine OVH**.
 
