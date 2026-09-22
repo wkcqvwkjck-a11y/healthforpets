@@ -36,18 +36,18 @@ git push -u origin main
 
 ### c) Domaine personnalisé
 
-1. Toujours dans **Settings → Pages**, champ *Custom domain* : `healthforpets.app` → **Save**
-   (GitHub créera alors le fichier `CNAME` dans le dépôt).
+1. Toujours dans **Settings → Pages**, champ *Custom domain* : `healthforpets.fr` → **Save**
+   (le fichier `CNAME` est déjà présent dans le dépôt avec ce domaine).
 2. Configurer les DNS chez OVH (section 2).
 3. Une fois les DNS propagés, cocher **Enforce HTTPS** (certificat Let's Encrypt gratuit).
 
-> ⚠️ Le fichier `CNAME` est actuellement **exclu du dépôt** (`.gitignore`) : il ne faut
-> l'ajouter qu'une fois le domaine acheté, sinon l'aperçu `github.io` redirigerait vers
-> un domaine inexistant.
+> ℹ️ Le fichier `CNAME` contient `healthforpets.fr` (domaine acheté chez OVH le 22/09/2026).
+> Tant que les DNS ne pointent pas vers GitHub, l'URL `github.io/healthforpets/` redirige
+> vers le domaine — c'est normal, le temps de la propagation.
 
 ## 2. DNS chez OVH
 
-Espace client OVH → **Web Cloud** → **Noms de domaine** → `healthforpets.app` → onglet
+Espace client OVH → **Web Cloud** → **Noms de domaine** → `healthforpets.fr` → onglet
 **Zone DNS**. Supprimer les entrées « Site web » par défaut, puis ajouter :
 
 | Type | Sous-domaine | Cible |
@@ -64,23 +64,28 @@ Espace client OVH → **Web Cloud** → **Noms de domaine** → `healthforpets.a
 
 TTL : 3600 s (valeur par défaut). Propagation : de quelques minutes à 24 h.
 
-## 3. Adresse e-mail `support@healthforpets.app`
+## 3. Adresse e-mail `support@healthforpets.fr`
 
+✅ **Les e-mails professionnels sont inclus** avec le domaine (offre MX Plan OVH).
 Deux options :
 
-- **Redirection OVH** (gratuite selon l'offre) : Espace client → E-mails → Redirections.
-- **ImprovMX** (gratuit) : créer une redirection `support@` vers ton adresse personnelle,
-  puis ajouter l'enregistrement MX indiqué.
+1. **Créer la boîte** (recommandé) : Espace client OVH → **Web Cloud** → **E-mails** →
+   `healthforpets.fr` → *Créer une adresse e-mail* → `support@healthforpets.fr`.
+2. **Redirection** : même menu → *Redirections* → rediriger `support@` vers ton adresse
+   personnelle (gratuit).
+
+> ⚠️ Ne supprime **pas** les enregistrements **MX** ni le **TXT SPF** de la zone DNS :
+> ils sont nécessaires au fonctionnement de l'e-mail.
 
 ## 4. Mettre à jour l'application
 
-Une fois le site en ligne, vérifier les URLs dans `src/constants/legal.ts` :
+Les URLs sont déjà configurées dans `src/constants/legal.ts` :
 
 ```ts
-export const PRIVACY_POLICY_URL = 'https://healthforpets.app/confidentialite.html';
-export const TERMS_URL = 'https://healthforpets.app/conditions.html';
-export const SUPPORT_URL = 'https://healthforpets.app/support.html';
-export const SUPPORT_EMAIL = 'support@healthforpets.app';
+export const PRIVACY_POLICY_URL = 'https://healthforpets.fr/confidentialite.html';
+export const TERMS_URL = 'https://healthforpets.fr/conditions.html';
+export const SUPPORT_URL = 'https://healthforpets.fr/support.html';
+export const SUPPORT_EMAIL = 'support@healthforpets.fr';
 ```
 
 ## 5. Modifier le site

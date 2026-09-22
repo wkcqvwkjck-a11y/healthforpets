@@ -1,7 +1,5 @@
-# Le fichier CNAME sera ajouté (ou créé automatiquement par GitHub Pages)
-# dès que le domaine sera acheté et les DNS configurés.
+# Le fichier CNAME (domaine personnalisé GitHub Pages) est bien versionné :
+# il contient le domaine acheté chez OVH (healthforpets.fr).
 #
-# Pour l'activer : supprimer la ligne "CNAME" ci-dessous, vérifier le contenu
-# du fichier CNAME (nom de domaine), puis :
-#   git add CNAME && git commit -m "Domaine personnalisé" && git push
-CNAME
+# ⚠️ Ne l'ajouter qu'une fois le domaine acheté : sinon l'aperçu
+# `wkcqvwkjck-a11y.github.io/healthforpets/` redirigerait vers un domaine inexistant.
