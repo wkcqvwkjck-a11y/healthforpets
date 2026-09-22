@@ -1,0 +1,7 @@
+# Le fichier CNAME sera ajouté (ou créé automatiquement par GitHub Pages)
+# dès que le domaine sera acheté et les DNS configurés.
+#
+# Pour l'activer : supprimer la ligne "CNAME" ci-dessous, vérifier le contenu
+# du fichier CNAME (nom de domaine), puis :
+#   git add CNAME && git commit -m "Domaine personnalisé" && git push
+CNAME
