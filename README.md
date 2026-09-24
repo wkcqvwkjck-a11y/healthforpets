@@ -1,11 +1,16 @@
 # Site web Health for Pets
 
-**Statut (22/09/2026)** : ✅ **en ligne sur `http://healthforpets.fr`** (8 pages FR/EN + assets en HTTP 200)
-· ⏳ HTTPS en cours d'émission par GitHub (certificat Let's Encrypt) → cocher **Enforce HTTPS** dès qu'il est disponible
-· ✅ DNS OVH vérifiés (4 A + 4 AAAA + CNAME `www`, **MX/SPF conservés** pour l'e-mail)
+**Statut (24/09/2026)** : ✅ **refonte minimaliste** — aucune image, design épuré (typographie
+système, filets fins, noir/blanc/gris + bleu Apple pour les liens) · 8 pages FR/EN + `assets/style.css`
+· ⏳ HTTPS en cours d'émission par GitHub (certificat Let's Encrypt) → cocher **Enforce HTTPS** dès
+qu'il est disponible · ✅ DNS OVH vérifiés (4 A + 4 AAAA + CNAME `www`, **MX/SPF conservés** pour l'e-mail)
 
-Site statique (HTML/CSS, aucune dépendance) destiné à **GitHub Pages** avec un **nom de
-domaine OVH**.
+Site statique (HTML/CSS, aucune dépendance, **sans image ni police externe**) destiné à
+**GitHub Pages** avec un **nom de domaine OVH**.
+
+> 🎨 **Parti pris minimaliste** : pas d'images, pas d'icônes, pas d'émojis, pas de cartes colorées.
+> Hiérarchie par la typographie et les filets 1 px uniquement. Le seul accent couleur est le bleu
+> Apple `#007aff` (liens) ; le bouton principal est noir.
 
 Il contient les pages exigées par l'App Store :
 

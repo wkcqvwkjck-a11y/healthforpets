@@ -1,29 +1,33 @@
-/* Health for Pets — feuille de style commune */
+/* Health for Pets — feuille de style commune (minimaliste, sans images) */
 :root {
-  --blue: #007aff;
-  --orange: #ff570f;
-  --ink: #1c1c1e;
+  --ink: #111114;
   --muted: #6e6e73;
-  --bg: #f7f7f9;
-  --card: #ffffff;
-  --line: #e5e5ea;
+  --line: #e6e6ea;
+  --soft: #f7f7f8;
+  --bg: #ffffff;
+  --accent: #007aff;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--ink);
   background: var(--bg);
-  line-height: 1.6;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--blue);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -32,165 +36,240 @@ a:hover {
 }
 
 .wrap {
-  max-width: 760px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 /* En-tête */
 header.site {
-  background: var(--card);
   border-bottom: 1px solid var(--line);
 }
 
 header.site .wrap {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
-header.site img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  align-items: baseline;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 header.site .brand {
-  font-weight: 700;
-  font-size: 17px;
-  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 header.site nav {
   margin-left: auto;
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
   font-size: 14px;
+}
+
+header.site nav a {
+  color: var(--muted);
+}
+
+header.site nav a:hover {
+  color: var(--ink);
+  text-decoration: none;
 }
 
 /* Contenu */
 main {
-  padding: 40px 0 64px;
+  padding: 56px 0 40px;
 }
 
 h1 {
-  font-size: 32px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: -0.01em;
-  margin: 36px 0 10px;
+  margin: 44px 0 12px;
 }
 
 h3 {
-  font-size: 16px;
-  margin: 24px 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
 }
 
 p,
 li {
-  font-size: 15px;
-  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 .lead {
   font-size: 17px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .updated {
   font-size: 13px;
   color: var(--muted);
+  margin-bottom: 24px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 20px 22px;
-  margin: 18px 0;
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin: 22px 0;
-}
-
+/* Boutons */
 .button {
   display: inline-block;
-  background: var(--blue);
+  background: var(--ink);
   color: #fff;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 15px;
-  margin: 6px 8px 6px 0;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .button:hover {
+  background: #000;
   text-decoration: none;
-  opacity: 0.9;
 }
 
 .button.secondary {
   background: transparent;
-  color: var(--blue);
-  border: 1px solid var(--blue);
+  color: var(--ink);
+  border: 1px solid var(--line);
 }
 
+.button.secondary:hover {
+  border-color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 40px;
+}
+
+/* Liste de fonctionnalités */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 32px;
+}
+
+.features li {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.features p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Questions fréquentes */
+.qa {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.qa p {
+  margin: 0;
+}
+
+/* Encadré */
 .note {
-  background: #fff8f4;
-  border: 1px solid #ffd9c7;
-  border-radius: 12px;
-  padding: 14px 16px;
+  margin: 32px 0 0;
+  padding: 16px 18px;
+  background: var(--soft);
+  border-radius: 8px;
   font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Tableaux */
+.scroll {
+  overflow-x: auto;
+  margin: 16px 0 24px;
 }
 
 table {
   width: 100%;
+  min-width: 520px;
   border-collapse: collapse;
   font-size: 14px;
-  margin: 12px 0;
 }
 
-th,
-td {
+th {
   text-align: left;
-  padding: 10px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding: 0 16px 8px 0;
+  border-bottom: 1px solid var(--ink);
+  vertical-align: bottom;
+}
+
+td {
+  padding: 12px 16px 12px 0;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
 
-th {
-  color: var(--muted);
-  font-weight: 600;
-}
-
+/* Pied de page */
 footer.site {
+  margin-top: 72px;
   border-top: 1px solid var(--line);
-  background: var(--card);
-  padding: 24px 0;
+  padding: 24px 0 48px;
   font-size: 13px;
   color: var(--muted);
+}
+
+footer.site p {
+  margin: 0;
 }
 
 footer.site a {
   color: var(--muted);
 }
 
-.lang {
-  font-size: 13px;
+footer.site a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  header.site .wrap {
+    align-items: center;
+  }
 }
